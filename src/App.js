@@ -146,7 +146,7 @@ function App() {
 function MovieDetails({movieList}){
   const id=useParams();
   const movie=movieList[id]
-  const[{name,rating,summary,trailer}]=movieList
+  const[{name,rating,summary,trailer}]=movie
    const styles = {
     color: rating >= 8.5 ? "teal" : "crimson",
     fontSize: "18px"
