@@ -6,6 +6,7 @@ import { Home } from './Home';
 import './App.css';
 import { AddMovie } from './AddMovie';
 import { NotFound } from './NotFound';
+import { useParams } from "react-router-dom";
 function App() {
   const movies=[
     {
@@ -143,6 +144,8 @@ function App() {
 }
 
 function MovieDetails({movieList}){
+  const id=useParams();
+  const movie=movieList[id]
   const[{name,rating,summary,trailer}]=movieList
    const styles = {
     color: rating >= 8.5 ? "teal" : "crimson",
