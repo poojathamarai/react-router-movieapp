@@ -47,7 +47,3 @@ export function Movie({ deleteButton, name, poster, rating, summary ,id}) {
     </Card>
   );
 }
-
-function MovieDetails(){
-
-}
