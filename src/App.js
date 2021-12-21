@@ -6,7 +6,6 @@ import { Home } from './Home';
 import './App.css';
 import { AddMovie } from './AddMovie';
 import { NotFound } from './NotFound';
-import { useParams } from 'react-router-dom';
 function App() {
   const movies=[
     {
