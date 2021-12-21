@@ -124,7 +124,7 @@ function App() {
            <AddMovie movieList={movieList} setMovieList={setMovieList}/>
         </Route>
         <Route path="/movie/:id">
-           <MovieDetails/>
+           <MovieDetails movieList={movieList}/>
         </Route>
         <Route path="/movie">
       <MovieList movies={movieList} setMovieList={setMovieList} />
@@ -143,11 +143,8 @@ function App() {
      );
 }
 
-function MovieDetails(){
-   const {name}=useParams();
-   const {rating}=useParams();
-   const {summary}=useParams();
-   const {trailer}=useParams();
+function MovieDetails({movieList}){
+  const[{name,rating,summary,trailer}]=movieList
    const styles = {
     color: rating >= 8.5 ? "teal" : "crimson",
     fontSize: "18px"
