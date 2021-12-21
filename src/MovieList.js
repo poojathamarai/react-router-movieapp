@@ -9,7 +9,7 @@ export function MovieList({ movies, setMovieList }) {
         <Movie deleteButton={<IconButton
           onClick={() => {
             const deleteIndex = index;
-            const remainingMovies = movies.filter((mv, idx) => deleteIndex != idx);
+            const remainingMovies = movies.filter((mv, idx) => deleteIndex !== idx);
             setMovieList(remainingMovies);
           }}><DeleteIcon color="error" /></IconButton>}
           id={index}
