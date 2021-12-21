@@ -146,9 +146,8 @@ function App() {
 function MovieDetails({movieList}){
   const id=useParams();
   const movie=movieList[id]
-  const[{name,rating,summary,trailer}]=movie
    const styles = {
-    color: rating >= 8.5 ? "teal" : "crimson",
+    color: movie.rating >= 8.5 ? "teal" : "crimson",
     fontSize: "18px"
   };
   return(
@@ -156,17 +155,17 @@ function MovieDetails({movieList}){
     <iframe 
     width="100%" 
     height="480" 
-    src={trailer} 
+    src={movie.trailer} 
     title="YouTube video player" 
     frameborder="0" 
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
     allowfullscreen></iframe>
     <div className="movie-detail-container">
   <div className="movie-specs">
-  <h3 className="movie-name">{name}</h3>
-  <p style={styles} className="movie-rating">⭐{rating}</p>
+  <h3 className="movie-name">{movie.name}</h3>
+  <p style={styles} className="movie-rating">⭐{movie.rating}</p>
   </div>
-<p className="movie-summary">{summary}</p>
+<p className="movie-summary">{movie.summary}</p>
 </div>   
 </div>)
 }
